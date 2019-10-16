@@ -1,5 +1,5 @@
 {
-  "name": "@innocells/branch-naming-check",
+  "name": "@we-make-websites/branch-naming-check",
   "version": "1.0.0",
   "description": "Enforce naming conventions on git branches",
   "main": "index.js",
@@ -17,14 +17,19 @@
     "branches",
     "naming"
   ],
-  "author": "Jose Luis Piedrahita",
+  "author": "Jose Luis Piedrahita + We Make Websites",
   "license": "ISC",
-  "devDependencies": {
-    "@innocells/eslint-config": "^1.2.0",
-    "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "prettier": "^1.11.1"
-  }
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/we-make-websites/branch-naming-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/we-make-websites/branch-naming-check/issues"
+  },
+  "homepage": "https://github.com/we-make-websites/branch-naming-check#readme"
 }
