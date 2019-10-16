@@ -25,9 +25,9 @@ currentBranchName().then(branchName => {
 
   if (validBranchNameRegExp.test(branchName)) {
     process.exitCode = 0;
-    console.log(`\n${green}✔${nc}   ${green}${branchName}${nc} matches branch naming convention\n`);
+    console.log(`${green}✔${nc}   ${green}${branchName}${nc} matches branch naming convention`);
   } else {
     process.exitCode = 1;
-    console.error(`\n${red}✖${nc}   ${red}${branchName}${nc} does not match branch naming convention ${grey}[feature|bugfix|hotfix|support]/[location]-[name]-[new|modified|fix]${nc}\n`);
+    console.error(`${red}✖${nc}   ${red}${branchName}${nc} does not match branch naming convention ${grey}[feature|bugfix|hotfix|support]/[location]-[name]-[new|modified|fix]${nc}`);
   }
 });
