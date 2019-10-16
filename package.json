@@ -1,6 +1,6 @@
 {
   "name": "@we-make-websites/branch-naming-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enforce naming conventions on git branches",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
-const { currentBranchName } = require("./lib/git-utils");
+const {currentBranchName} = require("./lib/git-utils");
+
+const red = '\033[0;31m'
+const green = '\033[0;32m'
+const grey = '\033[1;30m'
+const nc = '\033[0m'
 
 if (!process.argv[2]) {
   console.error("Usage: branch-naming-check <regexp>");
@@ -20,9 +25,9 @@ currentBranchName().then(branchName => {
 
   if (validBranchNameRegExp.test(branchName)) {
     process.exitCode = 0;
-    console.log(`%c✔   ${branchName}%c matches branch naming convention`, 'color: green', 'color: white');
+    console.log(`\n${green}✔${nc}   ${green}${branchName}${nc} matches branch naming convention\n`);
   } else {
     process.exitCode = 1;
-    console.error(`%c✖   ${branchName}%c does not match branch naming convention %c[feature|bugfix|hotfix|support]/[location]-[name]-[new|modified|fix]`, 'color: red', 'color: white', 'color: grey');
+    console.error(`\n${red}✖${nc}   ${red}${branchName}${nc} does not match branch naming convention ${grey}[feature|bugfix|hotfix|support]/[location]-[name]-[new|modified|fix]${nc}\n`);
   }
 });
