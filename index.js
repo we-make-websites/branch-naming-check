@@ -7,16 +7,10 @@ const green = '\033[0;32m'
 const grey = '\033[1;30m'
 const nc = '\033[0m'
 
-if (!process.argv[2]) {
-  console.error("Usage: branch-naming-check <regexp>");
-  process.exitCode = 1;
-  return;
-}
-
 currentBranchName().then(branchName => {
   let validBranchNameRegExp;
   try {
-    validBranchNameRegExp = new RegExp(process.argv[2], "g");
+    validBranchNameRegExp = new RegExp('^master|staging|development|((feature|bugfix|hotfix|support)\/((?![a-z]*plp|collectionPage|collectionpage|pdp|productPage|productpage|sitewide|wholesite|index|landing)[a-z]*)-[a-zA-Z0-9]*(-(new|modified|fix)|))$', 'g');
   } catch (error) {
     console.error(error.message + "\n");
     process.exitCode = 1;

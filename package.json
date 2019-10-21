@@ -1,7 +1,7 @@
 {
   "name": "@we-make-websites/branch-naming-check",
-  "version": "1.0.3",
-  "description": "Enforce naming conventions on git branches",
+  "version": "1.0.4",
+  "description": "Enforce We Make Websites branch naming conventions",
   "main": "index.js",
   "scripts": {
     "test": "jest"
