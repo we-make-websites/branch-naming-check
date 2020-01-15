@@ -10,7 +10,7 @@ const nc = '\033[0m'
 currentBranchName().then(branchName => {
   let validBranchNameRegExp;
   try {
-    validBranchNameRegExp = new RegExp('^master|staging|development|((feature|bugfix|hotfix|support)\/((?![a-z]*plp|collectionPage|collectionpage|pdp|productPage|productpage|sitewide|wholesite|index|landing)[a-z]*)-[a-zA-Z0-9]*(-(new|modified|fix)|))$', 'g');
+    validBranchNameRegExp = new RegExp('^master|staging|development|((feature|bugfix|hotfix|support|release)\/((?![a-z]*plp|collectionPage|collectionpage|pdp|productPage|productpage|sitewide|wholesite|index|landing)[a-z]*)-[a-zA-Z0-9]*(-(new|modified|fix)|))$', 'g');
   } catch (error) {
     console.error(error.message + "\n");
     process.exitCode = 1;
@@ -22,6 +22,6 @@ currentBranchName().then(branchName => {
     console.log(`${green}✔   ${branchName}${nc} branch naming convention correctly applied`);
   } else {
     process.exitCode = 1;
-    console.error(`${red}✖   ${branchName}${nc} branch naming convention not followed ${grey}[feature|bugfix|hotfix|support]/[location]-[name]-[new|modified|fix]${nc}`);
+    console.error(`${red}✖   ${branchName}${nc} branch naming convention not followed ${grey}[feature|bugfix|hotfix|support|release]/[location]-[name]-[new|modified|fix]${nc}`);
   }
 });

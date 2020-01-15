@@ -6,7 +6,7 @@ Enforce naming conventions on git branches
 ## Install
 
 ```
-npm install --save-dev @innocells/branch-naming-check
+npm install --save-dev @we-make-websites/branch-naming-check
 ```
 
 ## Usage
