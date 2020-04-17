@@ -1,6 +1,6 @@
 {
   "name": "@we-make-websites/branch-naming-check",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Enforce We Make Websites branch naming conventions",
   "main": "index.js",
   "scripts": {
