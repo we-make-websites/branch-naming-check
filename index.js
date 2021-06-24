@@ -7,18 +7,8 @@ const green = '\033[0;32m'
 const grey = '\033[1;30m'
 const nc = '\033[0m'
 
-currentBranchName().then(branchName => {
-  let validBranchNameRegExp;
-
-  try {
-    validBranchNameRegExp = new RegExp('^master|staging|development|((bugfix|feature|hotfix|release)\/[A-Z]+-\d+-\w{5,})$', 'g');
-  } catch (error) {
-    console.error(`${error.message}\n`);
-    process.exitCode = 1;
-    return;
-  }
-
-  if (validBranchNameRegExp.test(branchName)) {
+currentBranchName().then((branchName) => {
+  if (branchName.match(/^master|staging|development|((bugfix|feature|hotfix|release)\/[A-Z]+-\d+-\w{5,})$/g)) {
     process.exitCode = 0;
     console.log(`${green}✔   ${branchName}${nc} branch naming convention correctly applied`);
   } else {
